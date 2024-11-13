@@ -1,0 +1,300 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+} */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Hamburger Menu */
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: #000000; /* Default color for hamburger lines */
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px); /* Position of middle line when closed */
+}
+
+.hamburger-bottom {
+  transform: translateY(14px); /* Position of bottom line when closed */
+}
+
+.open {
+  transform: rotate(90deg); /* Rotate hamburger icon 90 degrees when open */
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translate(6px); /* Rotate and position top line when open */
+}
+
+.open .hamburger-middle {
+  display: none; /* Hide middle line when open */
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translate(-6px); /* Rotate and position bottom line when open */
+}
+
+/* Adjust colors based on theme */
+.text-black {
+  color: #000000; /* Default black color */
+}
+
+.text-white {
+  color: #ffffff; /* Default white color */
+}
+
+.bg-black {
+  background-color: #000000; /* Default black background */
+}
+
+.bg-white {
+  background-color: #ffffff; /* Default white background */
+}
+
+
+.gradient-button {
+  background: linear-gradient(to right, #933FFE, #18C8FF); 
+  border-radius: 6px;
+  font-family: Monaco, Monospace;
+  border: none;
+}
+
+/* Ensure the Swiper container is relatively positioned */
+.swiper-container {
+  position: relative;
+}
+
+/* Swiper navigation arrows for carousel one */
+.carousel-one .swiper-button-next,
+.carousel-one .swiper-button-prev {
+  color: var(--primary-color) !important; 
+  top: 50%;
+  transform: translateY(-25px);
+  position: absolute;
+  z-index: 10; 
+  width: 5px; 
+  height: 5px;
+}
+
+.carousel-one .swiper-button-next {
+  right: 35px !important; 
+}
+
+.carousel-one .swiper-button-prev {
+  left: 35px !important; 
+}
+
+/* Swiper pagination bullets for carousel one */
+.carousel-one .swiper-pagination {
+  position: absolute;
+  bottom: 0px !important;
+  left: 50%;
+  transform: translateX(0%);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 10;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--secondary-color) !important; 
+  opacity: 0.7 !important;
+  width: 10px; 
+  height: 10px; 
+  border-radius: 50%; 
+  margin: 0 4px; 
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--primary-color) !important;
+  opacity: 1 !important;
+}
+
+/* Swiper navigation arrows for carousel two */
+.carousel-two .swiper-button-next,
+.carousel-two .swiper-button-prev {
+  color: var(--primary-color) !important; 
+  top: 50%;
+  transform: translateY(-30%);
+  position: absolute;
+  z-index: 10; 
+  width: 40px; 
+  height: 40px; 
+}
+
+.carousel-two .swiper-button-next {
+  right: 0px !important;
+}
+
+.carousel-two .swiper-button-prev {
+  left: -5px !important; 
+}
+
+
+.carousel-two .swiper-pagination {
+  position: absolute;
+  bottom: 0px !important; 
+  left: 50%;
+  transform: translateY(0%);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 10; 
+}
+
+
+/* Define CSS variables for colors based on the theme */
+[data-theme='light'] {
+  --primary-color: black; 
+  --secondary-color: grey; 
+}
+
+[data-theme='dark'] {
+  --primary-color: white; 
+  --secondary-color: grey; 
+}
+
+[data-theme='light'] .carousel-three{
+  --primary-color: black; 
+  --secondary-color: grey;
+  --tab-color: white;
+  --tab-outline: black; 
+  --active-tab: lightpink;
+}
+
+[data-theme='dark'] .carousel-three{
+  --primary-color: white; 
+  --secondary-color: grey; 
+  --tab-color: black;
+  --tab-outline: white; 
+  --active-tab: rgb(115, 23, 115);
+}
+
+/* Swiper navigation buttons */
+.carousel-three .swiper-button-next,
+.carousel-three .swiper-button-prev {
+  color: var(--primary-color-light) !important;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  z-index: 10;
+}
+
+.carousel-three .swiper-button-next {
+  right: 5px;
+}
+
+.carousel-three .swiper-button-prev {
+  left: 5px;
+}
+
+[data-theme='dark'] .carousel-three .swiper-button-next,
+[data-theme='dark'] .carousel-three .swiper-button-prev {
+  color: var(--primary-color-dark) !important;
+}
+
+/* Swiper pagination bullets */
+.carousel-three .swiper-pagination {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateY(0%);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.carousel-three .swiper-pagination-bullet {
+  background-color: var(--secondary-color) !important;
+  opacity: 0.7 !important;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 4px;
+}
+
+.carousel-three .swiper-pagination-bullet-active {
+  background-color: rgb(97, 228, 148) !important;
+  opacity: 1 !important;
+  width: 36px;
+  border-radius: 8px;
+}
+
+/* Custom navigation tabs */
+.tab-button {
+  background: var(--tab-color);
+  border: 2px solid;
+  border-color: var(--tab-outline);
+  font-size: small;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-button.active {
+  border-color: var(--active-tab);
+}
+
+/* Theme-based variables */
+[data-theme='light'] .carousel-three{
+  --tab-border-color: black;
+  --pagination-bullet-color: black;
+}
+
+[data-theme='dark'] .carousel-three{
+  --tab-border-color: white;
+  --pagination-bullet-color: white;
+}
+
+body, p, Link, Button {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Mono', monospace;
+}
