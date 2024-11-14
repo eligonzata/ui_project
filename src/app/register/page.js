@@ -1,36 +1,29 @@
 "use client";
 import React, { useState } from 'react';
 
-function Account() {
+function Register() {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
 
-  // Hardcoded user credentials
-  const hardcodedUser = {
-    email: 'test@example.com',
-    password: 'password123',
-  };
-
-  // Handle form submission
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault();
 
-    // Check if both email and password are entered
-    if (!email || !password) {
-      setError('Please enter both email and password');
+    if (!firstName || !lastName || !email || !password || !confirmPassword) {
+      setError('Please fill in all fields');
+      return;
+    }
+    if (password !== confirmPassword) {
+      setError('Passwords do not match');
       return;
     }
 
-    // Check if email and password match the hardcoded credentials
-    if (email === hardcodedUser.email && password === hardcodedUser.password) {
-      setSuccessMessage('Login successful');
-      setError(''); // Clear any previous error messages
-    } else {
-      setError('Invalid email or password');
-      setSuccessMessage(''); // Clear any previous success message
-    }
+    setSuccessMessage('Registration successful');
+    setError('');
   };
 
   return (
@@ -42,15 +35,32 @@ function Account() {
         <img src="img/logo.png" alt="Scent Sanctuary Logo" />
       </div>
       <div className="right">
-        <h1>Welcome to Scent Sanctuary</h1>
+        <h1>Create an Account</h1>
         <form onSubmit={handleSubmit}>
+          <label htmlFor="firstName">First Name:</label>
+          <input
+            type="text"
+            id="firstName"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            required
+          />
+
+          <label htmlFor="lastName">Last Name:</label>
+          <input
+            type="text"
+            id="lastName"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            required
+          />
+
           <label htmlFor="email">Email:</label>
           <input
             type="email"
             id="email"
-            name="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)} // Update email state
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
 
@@ -58,22 +68,24 @@ function Account() {
           <input
             type="password"
             id="password"
-            name="password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)} // Update password state
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+
+          <label htmlFor="confirmPassword">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
             required
           />
 
           {error && <p className="error-message">{error}</p>}
           {successMessage && <p className="success-message">{successMessage}</p>}
 
-          <button type="submit">Login</button>
-
-          {/* Forgot Password and Register links */}
-          <div className="links">
-            <a href="/forgot-password" className="forgot-password">Forgot Password?</a>
-            <a href="/register" className="register">Create an Account</a>
-          </div>
+          <button type="submit">Register</button>
         </form>
       </div>
       <style jsx>{`
@@ -83,7 +95,7 @@ function Account() {
           align-items: center;
           height: 100vh;
           font-family: Arial, sans-serif;
-          background-color: #DEDDCA; /* Updated background color */
+          background-color: #DEDDCA;
           padding: 20px;
           box-sizing: border-box;
           max-width: 100%;
@@ -91,28 +103,28 @@ function Account() {
         }
         .logo {
           position: absolute;
-          top: 20px; /* Adjust positioning of the logo */
+          top: 20px;
           left: 74%;
           transform: translateX(-50%);
-          z-index: 10; /* Make sure the logo is above the content */
+          z-index: 10;
         }
         .logo img {
-          max-width: 120px; /* Adjust size of the logo */
+          max-width: 120px;
           height: auto;
         }
         .left {
           position: relative;
           flex: 1;
           height: 100vh;
-          min-width: 50%; 
+          min-width: 50%;
         }
         .left img {
           position: absolute;
           top: 0;
-          left: -10%; 
-          width: 120%; 
-          height: 100%; 
-          object-fit: cover; 
+          left: -10%;
+          width: 120%;
+          height: 100%;
+          object-fit: cover;
         }
         .right {
           flex: 1;
@@ -122,7 +134,8 @@ function Account() {
           justify-content: center;
           padding: 20px;
           box-sizing: border-box;
-          text-align: center; /* Center content inside right section */
+          text-align: center;
+          margin-top: 90px;
         }
         .right h1 {
           font-size: 24px;
@@ -131,7 +144,7 @@ function Account() {
         .right form {
           display: flex;
           flex-direction: column;
-          align-items: center; /* Center form content */
+          align-items: center;
         }
         .right label {
           margin-bottom: 5px;
@@ -141,7 +154,7 @@ function Account() {
           padding: 10px;
           border: 1px solid #ccc;
           border-radius: 5px;
-          width: 80%; /* Make input fields responsive */
+          width: 80%;
         }
         .right button {
           padding: 10px;
@@ -150,7 +163,7 @@ function Account() {
           border: none;
           border-radius: 5px;
           cursor: pointer;
-          width: 80%; /* Make button responsive */
+          width: 80%;
         }
         .right button:hover {
           background-color: #555;
@@ -164,50 +177,19 @@ function Account() {
           margin-bottom: 10px;
         }
 
-        .links {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          margin-top: 15px;
-        }
-
-        .links a {
-          color: #333;
-          text-decoration: none;
-          margin-top: 10px;
-        }
-
-        .links a:hover {
-          text-decoration: underline;
-        }
-
-        .forgot-password {
-          color: #007bff;
-        }
-
-        .register {
-          color: #28a745;
-        }
-
         @media (max-width: 768px) {
           .container {
             flex-direction: column;
             height: auto;
             justify-content: flex-start;
-            padding-top: 50px; /* Added padding to prevent overlap */
+            padding-top: 50px;
           }
           .logo {
             left: 50%;
             transform: translateX(-50%);
           }
           .left {
-            display: none; /* Hide the image on mobile */
-          }
-          .left img {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-            left: 0; /* For mobile responsiveness */
+            display: none;
           }
           .right h1 {
             font-size: 20px;
@@ -227,4 +209,4 @@ function Account() {
   );
 }
 
-export default Account;
+export default Register;
