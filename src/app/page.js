@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useContext } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ProductList from "./components/ProductList";
 import ThemeContext from "../../public/scripts/ThemeContext";
 import Image from "next/image";
 import Link from "next/link";
@@ -39,13 +40,13 @@ export default function Home() {
         className="flex flex-col items-center justify-center text-white relative"
       >
         {/* Main Content with Fade Animation */}
-        <Fade>
+        <Fade triggerOnce={true}>
           <h1 className="text-4xl font-bold mb-4">Scent Sanctuary</h1>
           <p className="text-lg max-w-lg text-center">
           Transform Your Space, Elevate Your Senses
           </p>
           <Link href="/shop">
-            <button className="mt-8 px-6 py-3 bg-gradient-to-r from-[#933FFE] to-[#18C8FF] text-white font-bold rounded">
+            <button className="mt-8 px-6 py-3 bg-gradient-to-r from-[#ffb03b] to-[#ff1f1b] text-white font-bold rounded">
               Visit the Shop
             </button>
           </Link>
@@ -55,11 +56,13 @@ export default function Home() {
         {/* "Popular Items" Heading */}
         <div className="text-center py-10">
         <h2 className="text-[#6f4f28] text-4xl font-semibold">Popular Categories</h2>
+        <ProductList tags={["popular"]} limit={3} />
       </div>
 
       {/* "Trending Items" Heading */}
       <div className="text-center py-10">
         <h2 className="text-[#6f4f28] text-4xl font-semibold">Trending Products</h2>
+        <ProductList tags={["trendy"]} limit={6} />
       </div>
 
       {/* Footer */}

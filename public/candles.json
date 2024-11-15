@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Ethereal Lavender Candle",
+    "blurb": "A soothing lavender candle.",
+    "description": "Immerse yourself in the calming aroma of pure lavender with our Ethereal Lavender Candle. Hand-poured with natural soy wax, this candle burns cleanly and evenly for up to 50 hours. Perfect for relaxation, meditation, or adding a serene touch to your home. The soothing lavender fragrance is complemented by subtle hints of chamomile and eucalyptus, making it ideal for winding down after a long day.",
+    "image": "/img/eth_Lavender.jpg",
+    "price": "$12.99",
+    "tags": ["floral", "popular", "EVERYTHING"]
+  },
+  {
+    "id": 2,
+    "name": "Citrus Grove Scented Candle",
+    "blurb": "A refreshing citrus candle.",
+    "description": "Brighten up any room with the refreshing, uplifting scent of Citrus Grove. This zesty blend of lemon, orange, and grapefruit will invigorate your senses and leave your space smelling fresh and lively. Made with a blend of eco-friendly soy wax and essential oils, this candle burns for up to 45 hours and creates a revitalizing atmosphere perfect for kitchens, bathrooms, or anywhere you need an energy boost.",
+    "image": "/img/citrus_grove.jpg",
+    "price": "$14.99",
+    "tags": ["fruity", "fresh", "EVERYTHING"]
+  },
+  {
+    "id": 3,
+    "name": "Woodland Candle",
+    "blurb": "A rich, earthy scent candle.",
+    "description": "Bring the outdoors in with the rich, earthy scent of the Woodland Candle. A perfect blend of pine, cedarwood, and oakmoss, this candle evokes the serene, fresh air of a forest hike. Whether you're curling up with a book or hosting a cozy gathering, the warm, woodsy aroma creates an inviting and tranquil environment. Hand-poured with premium soy wax and a lead-free cotton wick for an eco-conscious, long-lasting burn of up to 60 hours.",
+    "image": "/img/woodland_candle.png",
+    "price": "$13.99",
+    "tags": ["woody", "popular", "EVERYTHING"]
+  },
+  {
+    "id": 4,
+    "name": "Tropical Mango Bliss",
+    "blurb": "A tropical mango candle.",
+    "description": "Transport yourself to a tropical paradise with our Mango Bliss candle. The juicy scent of ripe mango combined with hints of pineapple and papaya makes this candle a fruity delight. Crafted with natural soy wax for a smooth burn and a lead-free cotton wick for safety, this candle burns up to 50 hours.",
+    "image": "/img/mango_bliss.jpg",
+    "price": "$15.49",
+    "tags": ["fruity", "trendy", "EVERYTHING"]
+  },
+  {
+    "id": 5,
+    "name": "Warm Vanilla Sugar",
+    "blurb": "A sweet vanilla candle.",
+    "description": "Indulge in the comforting scent of warm vanilla sugar. Our vanilla candle is crafted to emit a soft, sweet fragrance that lingers, perfect for cozy nights in. Made with a blend of soy and beeswax, this candle has a burn time of up to 40 hours, enhancing any space with a touch of warmth and sweetness.",
+    "image": "/img/wam_vanilla_sugar.jpg",
+    "price": "$13.99",
+    "tags": ["sweet", "popular", "EVERYTHING"]
+  },
+  {
+    "id": 6,
+    "name": "Cinnamon Spice Delight",
+    "blurb": "A cozy cinnamon spice candle.",
+    "description": "Our Cinnamon Spice Delight candle brings the warmth of cinnamon, cloves, and nutmeg to your home. This candle is perfect for fall and winter, evoking a sense of coziness and holiday spirit. Handcrafted with eco-friendly soy wax, it burns cleanly for up to 55 hours, filling your space with a comforting, spicy aroma.",
+    "image": "/img/cinnamon_candle.jpg",
+    "price": "$14.99",
+    "tags": ["spicy", "seasonal", "EVERYTHING"]
+  },
+  {
+    "id": 7,
+    "name": "Ocean Breeze",
+    "blurb": "A fresh ocean breeze candle.",
+    "description": "Bring the calming and refreshing scent of the ocean into your home. Our Ocean Breeze candle is infused with notes of sea salt, fresh water, and driftwood. Perfect for creating a spa-like ambiance, this candle offers a soothing, long-lasting burn of up to 45 hours with its premium soy wax blend.",
+    "image": "/img/ocean_breeze.jpg",
+    "price": "$12.49",
+    "tags": ["fresh", "trendy", "EVERYTHING"]
+  },
+  {
+    "id": 8,
+    "name": "Apple Harvest Candle",
+    "blurb": "A crisp apple candle.",
+    "description": "Enjoy the delightful scent of fresh apples with a hint of spice. The Apple Harvest candle combines the fragrances of ripe apples, cinnamon, and cloves to evoke the essence of autumn orchards. Made with soy wax, this candle provides a clean, safe burn for up to 50 hours.",
+    "image": "/img/apple_harvest.jpg",
+    "price": "$13.49",
+    "tags": ["fruity", "spicy", "EVERYTHING"]
+  },
+  {
+    "id": 9,
+    "name": "Midnight Jasmine",
+    "blurb": "An exotic jasmine candle.",
+    "description": "Our Midnight Jasmine candle offers an exotic, floral scent that’s both delicate and enticing. With subtle undertones of musk and white lily, this candle is perfect for adding a touch of elegance to any room. Made with soy wax, it has a burn time of up to 40 hours.",
+    "image": "/img/midnight_jasmine.jpg",
+    "price": "$12.99",
+    "tags": ["floral", "trendy", "EVERYTHING"]
+  },
+  {
+    "id": 10,
+    "name": "Gingerbread House",
+    "blurb": "A festive gingerbread candle.",
+    "description": "Celebrate the holidays with the warm, spicy scent of gingerbread cookies straight from the oven. Our Gingerbread House candle combines the fragrances of ginger, nutmeg, and brown sugar to create a nostalgic holiday atmosphere. Burns cleanly for up to 50 hours.",
+    "image": "/img/gingerbread_house.jpg",
+    "price": "$14.99",
+    "tags": ["spicy", "seasonal", "EVERYTHING"]
+  },
+  {
+    "id": 11,
+    "name": "Sweet Peony Blossom",
+    "blurb": "A delicate peony blossom candle.",
+    "description": "Bring a touch of floral elegance to your space with our Sweet Peony Blossom candle. This candle exudes the lush, romantic scent of peonies, complemented by hints of rose and jasmine. Ideal for adding a serene, sophisticated ambiance to your home, this candle burns for up to 50 hours.",
+    "image": "/img/sweet_peony.jpg",
+    "price": "$13.99",
+    "tags": ["floral", "popular", "EVERYTHING"]
+  },
+  {
+    "id": 12,
+    "name": "Wood Sage & Sea Salt",
+    "blurb": "An earthy sage and sea salt candle.",
+    "description": "Our Wood Sage & Sea Salt candle offers an earthy, coastal fragrance with hints of driftwood and sea salt. This candle brings a fresh and calming vibe to any space, perfect for unwinding after a long day. Burns cleanly for up to 50 hours with natural soy wax.",
+    "image": "/img/woodsage_seasalt.png",
+    "price": "$14.49",
+    "tags": ["woody", "fresh", "EVERYTHING"]
+  }
+]

@@ -25,7 +25,7 @@ const Footer = () => {
 
   const currentStyles = theme === "light" ? lightModeStyles : darkModeStyles;
 
-  const gradientImage = theme === "light" ? "" : "/img/footer-bg-gradient.png";
+  const gradientImage = theme === "light" ? "" : "/img/exchange-hero-red-bg.png";
 
   function emailBtnHandler() {
     const email = document.getElementById("email").value;
@@ -147,7 +147,7 @@ const Footer = () => {
           style={{
             backgroundImage: `url(${gradientImage})`,
             backgroundSize: "cover",
-            backgroundPosition: "right bottom",
+            backgroundPosition: "left",
           }}
         />
       </div>
