@@ -10,9 +10,9 @@ function Register() {
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (!firstName || !lastName || !email || !password || !confirmPassword) {
       setError('Please fill in all fields');
       return;
@@ -21,11 +21,33 @@ function Register() {
       setError('Passwords do not match');
       return;
     }
-
-    setSuccessMessage('Registration successful');
-    setError('');
+  
+    try {
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ firstName, lastName, email, password }),
+      });
+  
+      if (response.ok) {
+        setSuccessMessage("Registration successful");
+        setError("");
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setPassword("");
+        setConfirmPassword("");
+      } else {
+        const { error } = await response.json();
+        setError(error);
+      }
+    } catch (error) {
+      setError("Something went wrong. Please try again.");
+    }
   };
-
+  
   return (
     <div className="container">
       <div className="left">
