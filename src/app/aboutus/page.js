@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 
 function AboutUs() {
   return (
-    <div>
+    <div className="">
       <Navbar />
       <div className="container">
         <div className="left">

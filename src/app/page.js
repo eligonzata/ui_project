@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
 
+
 export default function Home() {
   // Access theme context if needed for dynamic styling
   const { theme } = useContext(ThemeContext);
@@ -20,9 +21,6 @@ export default function Home() {
         <title>Home - Your Website</title>
         <meta name="description" content="Welcome to the homepage" />
       </Head>
-
-       
-    
 
       {/* Navbar */}
       <Navbar />

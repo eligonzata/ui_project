@@ -56,7 +56,7 @@ const Footer = () => {
           <p className="text-gray-600 max-w-sm">
             Sign up to get the latest in news, discounts, opportunities, and more.
           </p>
-          <div className="relative w-full max-w-sm m-0 p-0.5 rounded-lg bg-gradient-to-r from-[#18C8FF] to-[#933FFE]">
+          <div className="relative w-full max-w-sm m-0 p-0.5 rounded-lg bg-gradient-to-r from-[#ffb03b] to-[#ff1f1b]">
             <input
               className={"p-3 pr-12 w-full rounded-lg focus:outline-none"}
               type="text"

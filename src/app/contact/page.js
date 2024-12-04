@@ -1,4 +1,3 @@
-// src/app/contact/page.js
 "use client";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -28,7 +27,6 @@ function ContactUs() {
       <Navbar />
       <div className="container">
         <div className="background">
-          {/* Removed the <img> tag */}
           <div className="overlay"></div>
         </div>
         <div className="form-container">
@@ -80,14 +78,14 @@ function ContactUs() {
             padding: 0;
             height: 100%;
             width: 100%;
-            overflow: hidden; /* Prevent horizontal scrolling */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
           }
 
           .container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             width: 100%;
             position: relative;
             color: #3b3b3b;
@@ -98,7 +96,7 @@ function ContactUs() {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 100vw;
             height: 100%;
             background-image: url("img/contact.jpg");
             background-size: cover;
