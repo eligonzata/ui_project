@@ -54,7 +54,7 @@ export default function Home() {
         {/* "Popular Items" Heading */}
         <div className="text-center py-10">
         <h2 className="text-[#6f4f28] text-4xl font-semibold">Popular Categories</h2>
-        <ProductList tags={["popular"]} limit={3} />
+        <ProductList tags={["popular"]} limit={6} />
       </div>
 
       {/* "Trending Items" Heading */}

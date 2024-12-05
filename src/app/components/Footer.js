@@ -25,7 +25,8 @@ const Footer = () => {
 
   const currentStyles = theme === "light" ? lightModeStyles : darkModeStyles;
 
-  const gradientImage = theme === "light" ? "" : "/img/exchange-hero-red-bg.png";
+  const gradientImage =
+    theme === "light" ? "" : "/img/exchange-hero-red-bg.png";
 
   function emailBtnHandler() {
     const email = document.getElementById("email").value;
@@ -46,7 +47,7 @@ const Footer = () => {
         <div className="flex flex-col space-y-4 z-10">
           <div className="flex items-center space-x-2">
             <Image
-              src="/img/logo.png"  // Path to your logo image
+              src="/img/logo.png" // Path to your logo image
               width={150}
               height={50}
               alt="Logo"
@@ -54,7 +55,8 @@ const Footer = () => {
             />
           </div>
           <p className="text-gray-600 max-w-sm">
-            Sign up to get the latest in news, discounts, opportunities, and more.
+            Sign up to get the latest in news, discounts, opportunities, and
+            more.
           </p>
           <div className="relative w-full max-w-sm m-0 p-0.5 rounded-lg bg-gradient-to-r from-[#ffb03b] to-[#ff1f1b]">
             <input
@@ -70,73 +72,23 @@ const Footer = () => {
               <FaArrowRight fill="gray" />
             </button>
           </div>
-          <p className="text-gray-600">
-            &copy; 2024 LLC, all rights reserved.
-          </p>
+          <p className="text-gray-600">&copy; 2024 LLC, all rights reserved.</p>
         </div>
 
         {/* Navigation Links Container */}
         <div className="flex flex-col space-y-3 text-gray-600 z-10">
-          <a href="#" className="hover:text-black font-semibold">
-            Exchange
-          </a>
-          <a href="#" className="hover:text-black">
-            Learn
-          </a>
-          <a href="#" className="hover:text-black">
-            Features
-          </a>
-          <a href="#" className="hover:text-black">
-            About
-          </a>
-          <a href="#" className="hover:text-black">
-            News
-          </a>
-          <a href="#" className="hover:text-black">
+          <Link href="/" className="hover:text-gray-300">
+            Home
+          </Link>
+          <Link href="/shop" className="hover:text-gray-300">
             Shop
-          </a>
-        </div>
-
-        {/* Privacy Policy Links Container */}
-        <div className="flex flex-col space-y-3 text-gray-600 z-10">
-          <p className="font-semibold">
-            Privacy Policy and Terms of Service
-          </p>
-          <a href="#" className="hover:text-black">
-            Privacy Policy
-          </a>
-          <a href="#" className="hover:text-black">
-            Terms & Conditions
-          </a>
-          <div className="flex space-x-2 mt-4">
-            <Link href="https://www.telegram.com" className="mt-16">
-              <Image
-                src="/img/telegram-icon-light.png"
-                width={30}
-                height={30}
-                alt="Telegram Logo"
-                priority
-              />
-            </Link>
-            <Link href="https://www.x.com" className="mt-16">
-              <Image
-                src="/img/x-icon-light.png"
-                width={30}
-                height={30}
-                alt="X Logo"
-                priority
-              />
-            </Link>
-            <Link href="" className="mt-16">
-              <Image
-                src="/img/instagram-icon-light.png"
-                width={30}
-                height={30}
-                alt="Instagram Logo"
-                priority
-              />
-            </Link>
-          </div>
+          </Link>
+          <Link href="/contact" className="hover:text-gray-300">
+            Contact
+          </Link>
+          <Link href="/aboutus" className="hover:text-gray-300">
+            About us
+          </Link>
         </div>
       </div>
 

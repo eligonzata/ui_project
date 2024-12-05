@@ -6,9 +6,6 @@ import { ShoppingCartIcon } from '@heroicons/react/24/solid';
 const Navbar = () => {
   const [cartItems, setCartItems] = useState([]);
   const [user, setUser] = useState(null); // State for user info
-
-  
-
   const navbarBackgroundColor = "#641414";
   const textColor = "#FFFFFF";
 
