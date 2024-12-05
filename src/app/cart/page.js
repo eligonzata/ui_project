@@ -72,7 +72,7 @@ function Cart() {
             {checkoutMessage ? (
               <p className="text-center text-lg text-green-600">{checkoutMessage}</p>
             ) : (
-              <p className="text-center text-lg text-white">Your cart is empty.</p>
+              <p className="text-center text-lg text-black">Your cart is empty.</p>
             )}
           </div>
         ) : (

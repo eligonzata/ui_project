@@ -1,10 +1,13 @@
-import { useState, useEffect } from "react"; // Add useEffect import
+import { useState, useEffect } from "react"; 
 import Image from "next/image";
 import Link from "next/link";
 import { ShoppingCartIcon } from '@heroicons/react/24/solid';
 
 const Navbar = () => {
   const [cartItems, setCartItems] = useState([]);
+  const [user, setUser] = useState(null); // State for user info
+
+  
 
   const navbarBackgroundColor = "#641414";
   const textColor = "#FFFFFF";
@@ -23,10 +26,22 @@ const Navbar = () => {
     ...commonStyles,
   };
 
+  // Fetch user info and cart items from localStorage
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     setCartItems(storedCartItems);
+
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    if (storedUser) {
+      setUser(storedUser); // Set user state if data exists in localStorage
+    }
   }, []);
+
+  // Handle logout
+  const handleLogout = () => {
+    localStorage.removeItem('user'); // Remove user data
+    setUser(null); // Reset user state
+  };
 
   return (
     <nav style={navbarStyles} className="relative top-0 sticky backdrop-blur-lg mx-auto z-50">
@@ -44,7 +59,13 @@ const Navbar = () => {
             <Link href="/shop" className="hover:text-gray-300">Shop</Link>
             <Link href="/contact" className="hover:text-gray-300">Contact</Link>
             <Link href="/aboutus" className="hover:text-gray-300">About us</Link>
-            <Link href="/account" className="bg-gradient-to-r text-transparent bg-clip-text from-[#FF6F61] to-[#FFD700] hover:text-gray-300">Account</Link>
+            {/* Conditionally render Account or Welcome */}
+            <Link 
+              href="/account" 
+              className="bg-gradient-to-r text-transparent bg-clip-text from-[#FF6F61] to-[#FFD700] hover:text-gray-300"
+            >
+              {user ? `Welcome ${user.firstName}` : 'Account'}
+            </Link>
           </div>
         </div>
 
@@ -57,6 +78,13 @@ const Navbar = () => {
             {cartItems.length}
           </span>
         </div>
+
+        {/* Logout Button (only if user is logged in) */}
+        {user && (
+          <button onClick={handleLogout} className="text-white hover:text-gray-300 ml-4">
+            Logout
+          </button>
+        )}
 
         <div className="absolute bottom-0 left-0 w-full h-[2px] bg-white "></div>
       </div>

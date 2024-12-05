@@ -2,38 +2,47 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useRouter } from "next/navigation";
 
-function Account() {
+const Account = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const router = useRouter();
 
-  // Hardcoded user credentials
-  const hardcodedUser = {
-    email: "test@example.com",
-    password: "password123",
-  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    setSuccessMessage("");
 
-  // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    try {
+      const response = await fetch(
+        "https://2dfe-66-25-161-126.ngrok-free.app/register_app/login.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
 
-    // Check if both email and password are entered
-    if (!email || !password) {
-      setError("Please enter both email and password");
-      return;
+      const data = await response.json();
+
+      if (data.status === "success") {
+        setSuccessMessage(data.message);
+        localStorage.setItem("user", JSON.stringify(data.user));
+        setTimeout(() => router.push("/"), 2000);
+      } else {
+        setError(data.message || "Invalid email or password");
+      }
+    } catch (err) {
+      setError("Something went wrong. Please try again.");
+      console.error("Error:", err);
     }
-
-    // Check if email and password match the hardcoded credentials
-    if (email === hardcodedUser.email && password === hardcodedUser.password) {
-      setSuccessMessage("Login successful");
-      setError(""); // Clear any previous error messages
-    } else {
-      setError("Invalid email or password");
-      setSuccessMessage(""); // Clear any previous success message
-    }
   };
+  
 
   return (
     <div>
